@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "CrearRegistroNotasEstudiantes";
+}
+
+<br />
+<br />
+<div class="panel panel-success">
+    <div class="panel-heading"><h3><b>Demografía</b></h3></div>
+    <br />
+    <div class="panel-body">
+        <div id="alert_placeholder"></div>
+        <form id="estudiante" role="form" method="post" action="">
+            <h5>Nombre del estudiante: Kelly Pacheco</h5> <br />
+
+            <table class="table table-bordered">
+                <tr>
+
+                    <td>
+                        <h4>Actividades</h4>
+
+                        <br> Seminario 1
+                        <br> Seminario 2
+                        <br> Seminario 3
+                        <br> Seminario 4
+                        <br> Taller Final
+                        <br> Examen final
+                    </td>
+
+
+
+
+                    <td>
+                        <h4>Porcentajes</h4>
+                        <br> 10%
+                        <br> 20%
+                        <br> 10%
+                        <br> 15%
+                        <br> 15%
+                        <br> 30%
+                    </td>
+
+
+                    <td>
+                        <h4>Notas</h4>
+
+
+                        <br> <input class="form-control numero" placeholder="Seminario 1" id="nota1" data-validation="number, length" data-validation-length="min2" data-validation-error-msg="Ingrese una nota válida" />
+                        <br> <input class="form-control numero" placeholder="Seminario 2" id="nota2" data-validation="number, length" data-validation-length="min2" data-validation-error-msg="Ingrese una nota válida" />
+                        <br> <input class="form-control numero" placeholder="Seminario 3" id="nota3" data-validation="number, length" data-validation-length="min2" data-validation-error-msg="Ingrese una nota válida" />
+                        <br> <input class="form-control numero" placeholder="Seminario 4" id="nota4" data-validation="number, length" data-validation-length="min2" data-validation-error-msg="Ingrese una nota válida" />
+                        <br> <input class="form-control numero" placeholder="Taller Final" id="nota5" data-validation="number, length" data-validation-length="min2" data-validation-error-msg="Ingrese una nota válida" />
+                        <br> <input class="form-control numero" placeholder="Examen final" id="nota6" data-validation="number, length" data-validation-length="min2" data-validation-error-msg="Ingrese una nota válida" />
+
+                    </td>
+
+
+                </tr>
+
+                <tr>
+                    <td colspan="4" align="right"><a href="" class="btn btn-success  active" role="button">Agregar nota</a>
+                        <a href="http://localhost:52293/ResultadosEvaluaciones/CrearResultadosEvaluaciones" class="btn btn-success  active" role="button">Volver</a> </td>
+                </tr>
+
+
+            </table>
+        </form>
+    </div>
+</div>
+<script>
+    var spanishLanguage = {
+        errorTitle: 'Hay datos incorrectos en el formulario'
+    }
+
+    $.validate({
+        validateOnBlur: false, // disable validation when input looses focus
+        errorMessagePosition: 'top', // Instead of 'inline' which is default
+        scrollToTopOnError: false, // Set this property to true on longer forms
+        language: spanishLanguage
+    });
+
+
+
+    bootstrap_alert = function () { };
+    bootstrap_alert.warning = function (message) {
+
+        $('alert_placeholder').
+    html('<div class ="alert alert-danger">' + '<a class="close" data-dismiss="alert">x</a><span>' + message + '</span></div>');
+    };
+
+
+
+
+</script>
+
+
+
+

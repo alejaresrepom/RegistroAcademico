@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "CrearResultadosEvaluaciones";
+}
+
+<br />
+<br />
+<div class="panel panel-success">
+    <div class="panel-heading"><h3><b>Registrar Notas</b></h3></div>
+    <br />
+    <div class="panel-body">
+        <div id="alert_placeholder"></div>
+        <form id="estudiante" role="form" method="post" action="">
+            <table class="table table-bordered">
+                <tr>
+                    <td>Curso</td>
+                    <td>
+                        <select class="form-control" data-validation="required" data-validation-error-msg="Seleccione un tipo de documento" id="curso">
+                            <option></option>
+                            <option>Demografía </option>
+                            <option>Epidemiología I </option>
+                            <option>Gestión de Recursos </option>
+                            <option>Métodos Epidemiológicos </option>
+                        
+                        </select>
+                    <td>Estudiante</td>
+                    <td><select class="form-control" data-validation="required" data-validation-error-msg="Seleccione un tipo de documento" id="estudiante">
+                            <option></option>
+                            <option>Kelly Pacheco</option>
+                            <option>Alejandra Restrepo</option>
+                            <option>Natalia Cardona Barriendo</option>
+                            <option>Andrea Uribe </option>
+                            <option>Juan Jose Herrera </option>         
+                            <option>Carla Lopez Giraldo</option>
+                            <option>Mariana Cardona</option>
+                            <option>Edgar Goblet</option>
+                            <option>Manuela Lopez</option>
+                            <option>Edison Bedoya</option>
+                            <option>Paula Restrepo</option>
+                            <option>Gloria Marin</option>
+                            <option>Fernando Gil</option>
+                            <option>Laura Taborda</option>
+                            <option>Manuela Hernandez</option>                        
+                            <option>Vanessa Ramirez</option>
+                    </select>
+                </tr>
+
+                <tr>                     
+                    <td colspan="4" align="right"><a href="http://localhost:52293/RegistroNotasEstudiantes/CrearRegistroNotasEstudiantes" class="btn btn-success  active" role="button">Registrar Notas</a> </td>
+                    
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<script>
+    var spanishLanguage = {
+        errorTitle: 'Hay datos incorrectos en el formulario'
+    }
+
+    $.validate({
+        validateOnBlur: false, // disable validation when input looses focus
+        errorMessagePosition: 'top', // Instead of 'inline' which is default
+        scrollToTopOnError: false, // Set this property to true on longer forms
+        language: spanishLanguage
+    });
+
+
+
+    bootstrap_alert = function () { };
+    bootstrap_alert.warning = function (message) {
+
+        $('alert_placeholder').
+    html('<div class ="alert alert-danger">' + '<a class="close" data-dismiss="alert">x</a><span>' + message + '</span></div>');
+    };
+
+
+
+
+</script>
+
+

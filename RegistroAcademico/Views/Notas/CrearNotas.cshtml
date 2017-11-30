@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "CrearNotas";
+}
+
+<br />
+<br />
+
+<div class="panel panel-success">
+    <div class="panel-heading"><h3><b>Notas</b></h3></div>
+    <br />
+    <div class="panel-body">
+        <div id="alert_placeholder"></div>
+        <form id="estudiante" role="form" method="post" action="">
+
+            <table class="table table-bordered">
+
+                <tr>
+                    <td>Tipo de documento</td>
+
+                    <td>
+                        <select class="form-control">
+                            <option></option>
+                            <option>Cédula de Ciudadanía</option>
+                            <option>Cédula de Extranjería</option>
+                            <option>Tarjeta de Identidad</option>
+                        </select>
+
+
+
+                    <td>Número de documento</td>
+                    <td><input required maxlength="20" class="form-control numero" id="numeroDocumento" /></td>
+                </tr>
+
+             
+
+                <tr>
+                    <td colspan="4" align="right"><a href="http://localhost:52293/NotasEstudiante/CrearNotasEstudiantes" class="btn btn-success  active" role="button">Ver notas</a> </td>
+                </tr>
+
+            </table>
+
+        </form>
+
+    </div>
+</div>
+
+
+

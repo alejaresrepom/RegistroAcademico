@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - App Registro academico</title>
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="~/Content/estilo.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="~/Content/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="~/Content/buttons.dataTables.min.css" />
+    <script type="text/javascript" src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.form-validator.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/buttons.print.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/pdfmake.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/vfs_fonts.js"></script>
+    <script type="text/javascript" src="~/Scripts/chart.loader.js"></script>
+    <script type="text/javascript" src="~/Scripts/jszip.min.js"></script>
+</head>
+<body>
+    <div class="navbar-default-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Registro Academico", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">             
+                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Registro academico App</p>
+        </footer>
+    </div>
+    <script>
+
+       
+
+        $('.fecha').datepicker({
+            language: "es",
+            autoclose: true,
+            format: "dd/mm/yyyy",
+            todayHightligth: true
+        });
+
+        $('.numero').keyup(function () {
+
+            this.value = this.value.replace(/[^0-9\.]/g, '');
+        });
+
+
+
+    </script>
+       
+        </body>
+</html>

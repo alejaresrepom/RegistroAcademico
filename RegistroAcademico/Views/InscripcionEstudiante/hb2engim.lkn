@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "CrearInscripcionEstudiante";
+}
+
+<br />
+<br />
+
+<div class="panel panel-danger">
+    <div class="panel-heading"><h3><b>Matrícula</b></h3></div>
+    <br />
+    <div class="panel-body">
+        <div id="alert_placeholder"></div>
+        <form id="estudiante" role="form" method="post" action="">
+
+            <table class="table table-bordered">
+
+                <tr>
+                    <td>Tipo de documento</td>
+
+                    <td>
+                        <select class="form-control">
+                            <option>Cédula de Ciudadanía</option>
+                            <option>Cédula de Extranjería</option>
+                            <option>Tarjeta de Identidad</option>
+                        </select>
+
+
+
+                    <td>Número de documento</td>
+                    <td><input required maxlength="20" class="form-control numero" id="numeroDocumento" /></td>
+                </tr>
+
+                <tr>
+                    <td>Primer Nombre</td>
+                    <td><input type="text" class="form-control" id="primerNombre" /></td>
+                    <td>Segundo Nombre</td>
+                    <td><input type="text" class="form-control" id="segundoNombre" /></td>
+                </tr>
+
+                <tr>
+                    <td>Primer Apellido</td>
+                    <td><input type="text" class="form-control" id="primerApellido" /></td>
+                    <td>Segundo Apellido</td>
+                    <td><input type="text" class="form-control" id="segundoApellido" /></td>
+                </tr>
+
+                <tr>
+                    <td>Ciudad</td>
+                    <td><input type="text" class="form-control" id="ciudad" /></td>
+                    <td>Dirección</td>
+                    <td><input type="text" class="form-control" id="direccion" /></td>
+                </tr>
+
+                <tr>
+                    <td>Telefono</td>
+                    <td><input type="text" class="form-control" id="telefono" /></td>
+                    <td>Correo Electrónico</td>
+                    <td><input type="text" class="form-control" id="correoElectronico" /></td>
+                </tr>
+
+
+                <tr>
+                    <td>Fecha de nacimiento</td>
+
+                    <td>
+                        <div class="input-group date fecha ">
+                            <input type="text" class="form-control datepicker"
+                                   id="fechaNacimiento">
+                            <span class="input-group-addon "><i class="glyphicon glyphicon-calendar"></i></span>
+                        </div>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td colspan="4" align="right">
+                        <input type="submit" value="Registrar" class="btn btn-danger btn-lg active" />
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+
+    </div>
+</div>
+
+<script>
+    $('.fecha').datepicker({
+        language: "es",
+        autoclose: true,
+        format: "dd/mm/yyyy",
+        todayHightligth: true
+    });
+
+    $('.numero').keyup(function () {
+
+        this.value = this.value.replace(/[^0-9\.]/g, '');
+    });
+
+    $('#estudiante').submit(function (evt) {
+        if ($('#numeroDocumento').val().length < 6) {
+            alert.warning('El numero de documento debe tener minimo seis digitos')
+            return false;
+        }
+    });
+
+    bootstrap_alert = function () { };
+    bootstrap_alert.warning = function (message) {
+
+        $('alert_placeholder').
+    html('<div class ="alert alert-danger">' + '<a class="close" data-dismiss="alert">x</a><span>' + message + '</span></div>');
+    };
+
+
+
+
+</script>
+

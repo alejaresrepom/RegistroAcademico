@@ -1,0 +1,145 @@
+﻿@{
+    ViewBag.Title = "Crear";
+}
+
+<br />
+<br />
+
+<div class="panel panel-success">
+    <div class="panel-heading"><h3><b>Inscripción de cursos</b></h3></div>
+    <br />
+    <div class="panel-body">
+        <div id="alert_placeholder"></div>
+        <form id="estudiante" role="form" method="post" action="">
+
+            <table class="table table-bordered">
+
+                <tr>
+                    <td>Tipo de documento</td>
+
+                    <td>
+                        <select class="form-control" data-validation="required" data-validation-error-msg="Seleccione un tipo de documento" id="tipodocestudiante">
+                            <option></option>
+                            <option>Cédula de Ciudadanía</option>
+                            <option>Cédula de Extranjería</option>
+                            <option>Tarjeta de Identidad</option>
+                        </select>
+
+                    <td>Número de documento</td>
+                    <td><input class="form-control numero" id="numeroDocumento" placeholder="Número Documento" data-validation="number, length" data-validation-length="min6" data-validation-error-msg="Ingrese numero de documento valido" /></td>
+                </tr>
+
+                
+                <tr>
+                    <td>Curso a inscribir</td>
+
+                    <td>
+
+                        <select class="form-control" data-validation="required" data-validation-error-msg="Seleccione un curso" id="cursoinscribir">
+                            <option></option>
+                            <option>Salud Publica </option>
+                            <option>Matemáticas Discretas </option>
+                            <option>Estadística Descriptiva </option>
+                            <option>Español </option>
+
+                            <option>Cálculo </option>
+                            <option>Demografía </option>
+                            <option>Sociología </option>
+                            <option>Programación </option>
+
+                            <option>Muestreo e Inferencia Estadística </option>
+                            <option>Economía de la Salud </option>
+                            <option>Teoría de la Organización </option>
+                            <option>Programación Matemática </option>
+
+
+                            <option>Estadística no Paramétrica </option>
+                            <option>Epidemiología I </option>
+                            <option>Telemática </option>
+                            <option>Gestión Pública en Salud </option>
+
+
+                            <option>Ingeniería Económica </option>
+                            <option>Seguridad Social </option>
+                            <option>Finanzas en Salud </option>
+                            <option>Gestión de Recursos </option>
+
+                            <option>Fundamentos de Lecto-Escritura </option>
+                            <option>Fundamentos de Matemáticas </option>
+                            <option>Fundamentos de Análisis Económico </option>
+                            <option>Gestión de Recursos </option>
+                            <option>Prevención y Promoción de la Salud </option>
+
+
+                            <option>Ética y Valores </option>
+                            <option>Gestión Financiera I </option>
+                            <option>Métodos Epidemiológicos </option>
+                            <option>Formación Ciudadana y Constitucional I </option>
+                            <option>Gestión Financiera II  </option>
+                            <option>Ética y Valores </option>
+                            <option>Gestión Financiera I </option>
+                            <option>Métodos Epidemiológicos </option>
+                            <option>Formación Ciudadana y Constitucional I </option>
+                            <option>Gestión Financiera  </option>
+                            <option>Factores de riesgo del Ambiente y del Consumo </option>
+                            <option>Físico Hidráulico </option>
+                            <option>Hidro Geomorfológico I </option>
+                            <option>Químico Eco biológico </option>
+
+                            <option>Diseño Trabajo de Grado </option>
+                            <option>Gestión de Procesos Sanitarios y Ambientales </option>
+
+                        </select>
+
+                </tr>
+
+
+                
+
+                <tr>
+                    <td colspan="4" align="right">
+                        <input type="submit" value="Registrar" class="btn btn-success btn-lg active" />
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+
+    </div>
+</div>
+<script>
+    var spanishLanguage = {
+        errorTitle: 'Hay datos incorrectos en el formulario'
+    }
+
+    $.validate({
+        validateOnBlur: false, // disable validation when input looses focus
+        errorMessagePosition: 'top', // Instead of 'inline' which is default
+        scrollToTopOnError: false, // Set this property to true on longer forms
+        language: spanishLanguage
+    });
+
+
+
+    bootstrap_alert = function () { };
+    bootstrap_alert.warning = function (message) {
+
+        $('alert_placeholder').
+    html('<div class ="alert alert-danger">' + '<a class="close" data-dismiss="alert">x</a><span>' + message + '</span></div>');
+    };
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+

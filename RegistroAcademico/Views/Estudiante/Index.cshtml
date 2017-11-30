@@ -1,0 +1,158 @@
+﻿@model IEnumerable<RegistroAcademico.Models.Estudiante>
+
+@{
+    ViewBag.Title = "Listado de Estudiantes";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table" id="estudiantes">
+
+
+    <thead>
+        <tr>
+            <th>
+                Tipo de Documento
+            </th>
+            <th>
+                Número Documento
+            </th>
+            <th>
+                Primer Nombre
+            </th>
+            <th>
+                Segundo Nombre
+            </th>
+            <th>
+                Primer Apellido
+            </th>
+            <th>
+                Segundo Apellido
+            </th>
+
+            <th>
+                Direccion
+            </th>
+
+            <th>
+                Telefono
+            </th>
+
+            <th>
+                Correo electronico
+            </th>
+
+            <th>
+                Departamento
+            </th>
+
+            <th>
+                Ciudad
+            </th>
+
+            <th>
+                &nbsp;
+            </th>
+        </tr>
+    </thead>
+
+        <tbody>
+
+           
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="color: black;">
+                            @Html.DisplayFor(modelItem => item.TipoDocumento.Nombre)
+                        </td>
+
+                        <td style="color: black;">
+                            @Html.DisplayFor(modelItem => item.NumeroDocumento)
+                        </td>
+                        <td style="color: black;">
+                            @Html.DisplayFor(modelItem => item.PrimerNombre)
+                        </td>
+                        <td style="color: black;">
+                            @Html.DisplayFor(modelItem => item.SegundoNombre)
+                        </td>
+                        <td style="color: black;">
+                            @Html.DisplayFor(modelItem => item.PrimerApellido)
+                        </td>
+                        <td style="color: black;">
+                            @Html.DisplayFor(modelItem => item.SegundoApellido)
+                        </td>
+                        <td style="color: black;">
+                            @Html.DisplayFor(modelItem => item.Direccion)
+                        </td>
+                        <td style="color: black;">
+                            @Html.DisplayFor(modelItem => item.Telefono)
+                        </td>
+
+                        <td style="color: black;">
+                            @Html.DisplayFor(modelItem => item.CorreoElectronico)
+                        </td>
+
+
+                        <td style="color: black;">
+                            @Html.DisplayFor(modelItem => item.Departamento.Nombre)
+                        </td>
+                        <td style="color: black;">
+                            @Html.DisplayFor(modelItem => item.Ciudad.Nombre)
+                        </td>
+
+                        <td>
+
+                            @Html.ActionLink("Editar", "Editar", new { id = item.IdEstudiante }) |
+                            @Html.ActionLink("Eliminar", "Eliminar", new { id = item.IdEstudiante })
+                        </td>
+                    </tr>
+                }
+
+</tbody>
+
+
+</table>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var pacientes = $('#estudiantes').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'excel',
+                    text: 'Excel'
+                },
+                {
+                    extend: 'print',
+                    text: 'HTML'
+                },
+                {
+                    extend: 'pdf',
+                    text: 'PDF'
+                }
+            ],
+            language: {
+                "decimal": ".",
+                "thousands": ",",
+                "processing": "<span><b>Buscando registros</b></span>",
+                "lengthMenu": "Mostrar _MENU_ registros por página",
+                "zeroRecords": "No se encontraron registros",
+                "info": "Mostrando página _PAGE_ de _PAGES_",
+                "infoEmpty": "No hay registros disponibles",
+                "infoFiltered": "(Filtrado de _MAX_ registros totales)",
+                "search": "Buscar:",
+                "paginate": {
+                    "first": "Primero",
+                    "last": "Último",
+                    "next": "Próximo",
+                    "previous": "Anterior"
+                }
+            }
+        });
+    });
+</script>
